@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+#  web:
+#    build: .
+#    ports:
+#      - "8000:8000"
+
+  postgres:
+    container_name: postgres_integration_test
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "5432:5432"
+    #    volumes:
+    #      - pg_data:/var/lib/postgres/data
+    restart: always
