@@ -34,23 +34,22 @@ const getUserBYId = async (req, res) => {
         return res.status(500).send(error);
     }
 }
-// const deleteuser=async(req,res)=>{
-//     try{
-//         const {id}= req.params.id;
-//         const deleted = await deleteUser(id);
-//         if (deleted) {
-//             console.log(deleted)
-//             return res.status(204).send("User deleted");
-//         }else{
-//             throw new Error("user not found")
-//         }
-//
-//     }catch (error){
-//         console.log("Error occurred while deleting product", error);
-//         return res.status(500).send(error.message);
-//     }
-// }
+const deleteuser=async(req,res)=>{
+    try{
+        const {id}= req.params;
+        const deleted = await deleteUser(id);
+        if (deleted) {
+            console.log(deleted)
+            return res.status(204).send("User deleted");
+        }
+        return res.status(404).send('User with the specified  does not exits')
+        // throw new Error("user not found")
+    }catch (error){
+        console.log("Error occurred while deleting product", error);
+        return res.status(500).send(error.message);
+    }
+}
 module.exports = {
     createUser, getAllUsers, getUserBYId,
-    // deleteuser
+    deleteuser
 }

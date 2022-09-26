@@ -41,7 +41,7 @@ describe("Integration testing for user Api", () => {
        expect(res.body).toHaveProperty('user')
     })
     it("Should delete user",async ()=>{
-        const res=await request(app).delete("/api/users/2")
+        const res=await request(app).delete("/api/users/4")
         expect(res.statusCode).toEqual(204);
     })
 })
