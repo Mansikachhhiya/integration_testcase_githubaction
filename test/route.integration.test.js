@@ -40,8 +40,8 @@ describe("Integration testing for user Api", () => {
         expect(res.statusCode).toEqual(201);
        expect(res.body).toHaveProperty('user')
     })
-    // it("Should throw a error on posting empty user data",async ()=>{
-    //     const res=await request(app).post("/api/users").send({})
-    //     expect(res.statusCode).toEqual(404);
-    // })
+    it("Should delete user",async ()=>{
+        const res=await request(app).delete("/api/users/2")
+        expect(res.statusCode).toEqual(204);
+    })
 })
