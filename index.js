@@ -23,7 +23,7 @@ app.use(logger('dev'))
 //routers
 
 // const router = require("../sequelize_demo2/routes/productRouter")
-const routers = require("./routes");
+const routers = require("./routes/index");
 app.use("/api",routers)
 
 //testing api
