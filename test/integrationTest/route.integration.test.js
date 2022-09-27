@@ -1,7 +1,7 @@
 const express = require("express");
 const request = require("supertest");
-const route = require("../routes/index");
-const daos = require("../controllers/data/utils")
+const route = require("../../routes");
+const daos = require("../../controllers/data/utils")
 
 const app = express();
 app.use(express.json());
