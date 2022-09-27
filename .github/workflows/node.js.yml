@@ -4,6 +4,8 @@
 name: pull request for unit test
 
 on:
+  push:
+    branches: [ "feature/unit_test" ]
   pull_request:
     branches: [ "feature/unit_test" ]
 
