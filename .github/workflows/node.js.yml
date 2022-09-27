@@ -28,5 +28,7 @@ jobs:
         cache: 'npm'
     - name: install dependencies
       run: npm install
+    - name: docker up for run postgres
+      run: docker-compose up -d
     - name: run unit test
       run: npm test
